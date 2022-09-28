@@ -6,7 +6,7 @@
 
 - [Tilt.dev Extensions](#tiltdev-extensions)
   - [How to use this extension repository](#how-to-use-this-extension-repository)
-  - [Extensions List](#extensions-list)
+  - [Extensions](#extensions)
 
 <!--TOC-->
 
@@ -26,4 +26,6 @@ load('ext://extension_name', 'extension_function_name')
 <!-- markdownlint-enable -->
 ---
 
-## Extensions List
+## Extensions
+
+- [Project Setup](/project_setup/)

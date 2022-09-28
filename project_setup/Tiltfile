@@ -1,0 +1,51 @@
+load('ext://color', 'color')
+load('ext://dotenv', 'dotenv')
+load('ext://min_k8s_version', 'min_k8s_version')
+load('ext://min_tilt_version', 'min_tilt_version')
+
+def project_setup(
+	min_k8s_version, min_tilt_version='0.30.8', use_dotenv=True, dotenv_file=".env", register_voidstack_extensions=True
+):
+
+	print("""
+{break_line}
+🤖 Starting Configuration of Base Settings
+{break_line}
+""".format(break_line=color.green('-----------------------------------------------------------------')).strip())
+
+	if register_voidstack_extensions:
+		print()
+		print("\tRegistering VoidStack tilt extensions")
+		# v1alpha1.extension_repo(name='voidstack', url='https://github.com/voidstack-io/tilt-extensions')
+		# v1alpha1.extension(name='project_setup', repo_name='voidstack', repo_path='project_setup')
+
+	print()
+	print("\tSetting minimum kubernetes version to:", min_k8s_version)
+	print()
+	print("\tSetting minimum tilt version to:", min_tilt_version)
+
+	if use_dotenv:
+
+		_dir = os.getcwd()
+		_env_exists = os.path.exists(_dir + '/' + dotenv_file)
+
+		if _env_exists:
+			print()
+			print("\tLoading dotEnv file:", dotenv_file)
+			dotenv(fn=dotenv_file)
+		else:
+			print()
+			print()
+			print(color.yellow("\t\t\tWARNING\tWARNING\tWARNING"))
+			print()
+			print(color.yellow("dotEnv file does not exist at " + _dir + '/' + dotenv_file))
+			print()
+			print(color.yellow("\t\t\tWARNING\tWARNING\tWARNING"))
+			print()
+
+	print()
+	print("""
+{break_line}
+🤖 Completed Configuration of Base Settings
+{break_line}
+""".format(break_line=color.green('-----------------------------------------------------------------')).strip())

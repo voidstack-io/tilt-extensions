@@ -1,7 +1,0 @@
-load('ext://color', 'color')
-load('ext://dotenv', 'dotenv')
-load('ext://min_k8s_version', 'min_k8s_version')
-load('ext://min_tilt_version', 'min_tilt_version')
-
-def project_settings():
-	pass
