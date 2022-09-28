@@ -12,4 +12,5 @@ trim_trailing_whitespace = false
 
 [Tiltfile]
 indent_style = tab
+indent_size = 1
 tab_width = 4
